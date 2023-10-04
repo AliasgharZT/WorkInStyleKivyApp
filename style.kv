@@ -1,0 +1,112 @@
+<MyButton@Button>:
+    size_hint:0.1,0.05
+
+<Style>:
+    image_top_meno:image_top_meno
+
+    Screen:
+        id:main 
+        AnchorLayout:
+            anchor_y:'top'
+            MDTopAppBar:
+                size_hint:1,0.07
+                left_action_items:[['information-slab-circle',lambda x:root.about(),'About']]
+                right_action_items:[['animation',lambda x:meno.set_state('open'),'Meno']]
+                Image:
+                    id:image_top_meno
+                    source:'0.jpg'
+
+        MDNavigationDrawer:
+            id:meno 
+            anchor: "right"
+            ScrollView:
+                MDList:
+                    MDNavigationDrawerHeader:
+                        title:'Meno'
+                    MDNavigationDrawerLabel:
+                        text:'HOME'
+                    OneLineListItem:
+                        text:'BackHome'
+                        on_press:
+                            meno.set_state('close')
+                    MDNavigationDrawerLabel:
+                        text:'Setting'
+                    OneLineListItem:
+                        text:'ChangeTheme'
+                        on_press:root.change_theme()
+                    OneLineListItem:
+                        text:'ChangeColorTopMeno'
+                        on_press:root.change_color_top_meno()
+                    OneLineListItem:
+                        text:'changeImageTopMeno'
+                        on_press:root.change_image_top_meno()
+
+
+        StackLayout:
+            #[tb,bt,lr,rl]
+            orientation:'lr-bt'
+            MyButton:
+                id:b1 
+                text:'1'
+                on_press:lbl.text=b1.text
+            MyButton:
+                id:b2 
+                text:'2'
+                on_press:lbl.text=b2.text
+            MyButton:
+                id:b3
+                text:'3'
+                on_press:lbl.text=b3.text
+            MyButton:
+                id:b4
+                text:'4'
+                on_press:lbl.text=b4.text
+            MyButton:
+                id:b5
+                text:'5'
+                on_press:lbl.text=b5.text
+            MyButton:
+                id:b6
+                text:'6'
+                on_press:lbl.text=b6.text
+            MyButton:
+                id:b7
+                text:'7'
+                on_press:lbl.text=b7.text
+            MyButton:
+                id:b8
+                text:'8'
+                on_press:lbl.text=b8.text
+            MyButton:
+                id:b9 
+                text:'9'
+                on_press:lbl.text=b9.text 
+            MyButton:
+                id:b10
+                text:'10'
+                on_press:lbl.text=b10.text 
+            MyButton:
+                id:b11
+                text:'11'
+                on_press:lbl.text=b11.text 
+
+        Label:
+            id:lbl
+            text:'Temp'
+            font_size:37
+        AnchorLayout:
+            anchor_x:'left'
+            anchor_y:'center'
+            Button:
+                size_hint:0.1,0.2
+                text:'clear\nclean\ntemp' 
+                on_press:lbl.text='TEMP'      
+
+        AnchorLayout:
+            canvas:
+                Ellipse:
+                    angle_start:120
+                    angle_end:420
+                    pos:12,111
+                    source:'0.jpg'
+   
