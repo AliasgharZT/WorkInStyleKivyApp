@@ -5,7 +5,6 @@
     image_top_meno:image_top_meno
 
     Screen:
-        id:main 
         AnchorLayout:
             anchor_y:'top'
             MDTopAppBar:
@@ -15,33 +14,6 @@
                 Image:
                     id:image_top_meno
                     source:'0.jpg'
-
-        MDNavigationDrawer:
-            id:meno 
-            anchor: "right"
-            ScrollView:
-                MDList:
-                    MDNavigationDrawerHeader:
-                        title:'Meno'
-                    MDNavigationDrawerLabel:
-                        text:'HOME'
-                    OneLineListItem:
-                        text:'BackHome'
-                        on_press:
-                            meno.set_state('close')
-                    MDNavigationDrawerLabel:
-                        text:'Setting'
-                    OneLineListItem:
-                        text:'ChangeTheme'
-                        on_press:root.change_theme()
-                    OneLineListItem:
-                        text:'ChangeColorTopMeno'
-                        on_press:root.change_color_top_meno()
-                    OneLineListItem:
-                        text:'changeImageTopMeno'
-                        on_press:root.change_image_top_meno()
-
-
         StackLayout:
             #[tb,bt,lr,rl]
             orientation:'lr-bt'
@@ -109,4 +81,30 @@
                     angle_end:420
                     pos:12,111
                     source:'0.jpg'
+
+    Screen:
+        MDNavigationDrawer:
+            id:meno 
+            anchor: "right"
+            ScrollView:
+                MDList:
+                    MDNavigationDrawerHeader:
+                        title:'Meno'
+                    MDNavigationDrawerLabel:
+                        text:'HOME'
+                    OneLineListItem:
+                        text:'BackHome'
+                        on_press:
+                            meno.set_state('close')
+                    MDNavigationDrawerLabel:
+                        text:'Setting'
+                    OneLineListItem:
+                        text:'ChangeTheme'
+                        on_press:root.change_theme()
+                    OneLineListItem:
+                        text:'ChangeColorTopMeno'
+                        on_press:root.change_color_top_meno()
+                    OneLineListItem:
+                        text:'changeImageTopMeno'
+                        on_press:root.change_image_top_meno()
    
