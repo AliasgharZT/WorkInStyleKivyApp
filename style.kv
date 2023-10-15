@@ -5,6 +5,13 @@
     image_top_meno:image_top_meno
 
     Screen:
+        name:'background'
+        Image:
+            source:'0.jpg'
+            allow_stretch:True
+            keep_ratio:False
+    Screen:
+        name:'main'
         AnchorLayout:
             anchor_y:'top'
             MDTopAppBar:
@@ -66,6 +73,7 @@
             id:lbl
             text:'Temp'
             font_size:37
+            color:'red'
         AnchorLayout:
             anchor_x:'left'
             anchor_y:'center'
@@ -77,12 +85,13 @@
         AnchorLayout:
             canvas:
                 Ellipse:
-                    angle_start:120
-                    angle_end:420
+                    angle_start:0
+                    angle_end:360
                     pos:12,111
-                    source:'0.jpg'
+                    source:'5.jpg'
 
     Screen:
+        name:'navigation'
         MDNavigationDrawer:
             id:meno 
             anchor: "right"
